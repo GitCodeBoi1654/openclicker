@@ -1,6 +1,6 @@
 var cookies = localStorage.getItem("cookiesBaked");
 
-if (cookies === null) {
+if (cookies == null) {
   cookies = 0;
 } else {
   cookies = parseInt(cookies);
@@ -9,10 +9,10 @@ if (cookies === null) {
 document.getElementById("cookies-display").textContent = "You've baked " + cookies + " cookies!";
 
 document.getElementById("cookie").addEventListener("click", function() {
-  cookies++;
+  cookies += 1;
   localStorage.setItem("cookiesBaked", cookies.toString());
 
-  if (cookies === 1) {
+  if (cookies == 1) {
     document.getElementById("cookies-display").textContent = "You've baked 1 cookie!";
   } else {
     document.getElementById("cookies-display").textContent = "You've baked " + cookies + " cookies!";
