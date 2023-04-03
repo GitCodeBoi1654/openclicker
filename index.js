@@ -1,17 +1,13 @@
-var cookies = 0;
+var cookies = +localStorage.getItem('count') || 0;
 
+document.getElementById('cookies-display').textContent =
+  "You've baked " + cookies + ' cookies!';
 
-document.getElementById("cookie").addEventListener("click", function() {
-    cookies += 1;
-   
+document.getElementById('cookie').addEventListener('click', function () {
+  cookies += 1;
 
-    if (cookies == 1 ) {
-        document.getElementById("cookies-display").textContent = "You've baked 1 cookie!";
-    }
-    if (cookies > 1 ) {
-        document.getElementById("cookies-display").textContent = "You've baked " + cookies + " cookies!";
-    }
+  localStorage.setItem('count', cookies);
 
-
-
+  document.getElementById('cookies-display').textContent =
+    "You've baked " + cookies + ' cookies!';
 });
