@@ -1,20 +1,22 @@
-var cookies = localStorage.getItem("cookiesBaked");
-
-if (cookies == null) {
-  cookies = 0;
-} else {
-  cookies = parseInt(cookies);
-}
-
-document.getElementById("cookies-display").textContent = "You've baked " + cookies + " cookies!";
+var cookies = ParseInt(localStorage.getItem("cookiesBaked"));
+ if (cookies == 1 ) {
+        document.getElementById("cookies-display").textContent = "You've baked 1 cookie!";
+    }
+    if (cookies > 1 ) {
+        document.getElementById("cookies-display").textContent = "You've baked " + cookies + " cookies!";
+    }
 
 document.getElementById("cookie").addEventListener("click", function() {
-  cookies += 1;
-  localStorage.setItem("cookiesBaked", cookies.toString());
+    cookies += 1;
+    localStorage.setItem("cookiesBaked", cookies );
 
-  if (cookies == 1) {
-    document.getElementById("cookies-display").textContent = "You've baked 1 cookie!";
-  } else {
-    document.getElementById("cookies-display").textContent = "You've baked " + cookies + " cookies!";
-  }
+    if (cookies == 1 ) {
+        document.getElementById("cookies-display").textContent = "You've baked 1 cookie!";
+    }
+    if (cookies > 1 ) {
+        document.getElementById("cookies-display").textContent = "You've baked " + cookies + " cookies!";
+    }
+
+
+
 });
