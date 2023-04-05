@@ -1,7 +1,7 @@
 var cookies = +localStorage.getItem('count') || 0;
 
 document.getElementById('cookies-display').textContent =
-  "You've baked " + cookies + ' cookies!';
+  "You've brewed " + cookies + ' coffees!';
 
 document.getElementById('cookie').addEventListener('click', function () {
   cookies += 1;
@@ -9,5 +9,5 @@ document.getElementById('cookie').addEventListener('click', function () {
   localStorage.setItem('count', cookies);
 
   document.getElementById('cookies-display').textContent =
-    "You've baked " + cookies + ' cookies!';
+    "You've brewed " + cookies + ' coffees!';
 });
